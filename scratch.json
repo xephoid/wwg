@@ -1,0 +1,99 @@
+[
+  {
+  "description": "Description of arrival",
+  "beings": [
+    { "name": "A scifi sounding name",
+      "race": "Human",
+      "abilityScores": [{
+        "ability": "SWA", "score": "1"}
+      ],
+      "description": "A short physical description"
+    },
+    { "name": "A name from the rulebook",
+      "race": "Hexapod",
+      "abilityScores": [
+        { "ability": "RES", "score": 1 }
+      ],
+      "description": "A short physical description"
+    },
+    { "name": "Boon of Pyrite",
+      "race": "Grull",
+      "abilityScores": [{
+        "ability": "SNE", "score": "1"}
+      ],
+      "description": "A short physical description"
+    },
+    { "name": "Gronk",
+      "race": "Kralkin",
+      "abilityScores": [
+        { "ability": "DIP", "score": 1 }
+      ],
+      "description": "A short physical description"
+    }
+  ]
+},
+
+{
+  "description": "Description of arrival",
+  "missions": [
+    {
+      "title": "A Mission title",
+      "description": "More details on the mission requirements",
+      "distance": 3,
+      "ability": "RES",
+      "credits": 300,
+      "xp": 1
+    },
+    {
+      "title": "A Mission title",
+      "description": "More details on the mission requirements",
+      "distance": 3,
+      "ability": "SWA",
+      "credits": 300,
+      "xp": 1
+    },
+    {
+      "title": "A Mission title",
+      "description": "More details on the mission requirements",
+      "distance": 3,
+      "ability": "HAK",
+      "credits": 300,
+      "xp": 1
+    }
+  ]
+},
+
+{
+  "description": "Description of arrival",
+  "items": [
+    {
+      "name": "Scifi name relating to what is does",
+      "type": "Consumable",
+      "effect": {
+        "ability": "RES",
+        "score": 3
+      },
+      "cost": 200
+    },
+    {
+      "name": "Scifi name relating to what is does",
+      "type": "Weapon",
+      "effect": {
+        "ability": "GUN",
+        "score": 3
+      },
+      "cost": 300
+    },
+    {
+      "name": "Scifi name relating to what is does",
+      "type": "Ship part",
+      "effect": {
+        "ability": "Speed",
+        "score": "1"
+      },
+      "cost": 300
+    }
+  ]
+}
+
+]

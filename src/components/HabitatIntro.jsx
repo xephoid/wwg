@@ -29,8 +29,7 @@ export default function HabitatIntro(props) {
       const newPlayeInfo = { ...playerInfo };
       newPlayeInfo.threadId = json.threadId;
       setPlayerInfo(newPlayeInfo);
-      const newMessages = [...messages];
-      newMessages.push(json.description);
+      const newMessages = [...messages, { text: json.description, type: 'assistant' }];
       setMessages(newMessages);
     })
     .catch((error) => {

@@ -11,7 +11,7 @@ export default function CharacterCreationName(props) {
             setPlayerInfo(newPlayerInfo) 
           }}></Input>
           <Button onClick={() => {
-            const newMessages = [ ...messages, "Your character's name is: " + playerInfo.name ];
+            const newMessages = [...messages, { text: "Your character's name is: " + playerInfo.name, type: 'user' }];
             setMessages(newMessages);
             setGameState('CHARACTER_CREATION_STEP_RACE');
           }}>Submit</Button>

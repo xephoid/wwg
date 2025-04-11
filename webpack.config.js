@@ -9,6 +9,10 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   resolve: {
@@ -19,6 +23,8 @@ module.exports = {
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './public'),
+    static: {
+      directory: path.resolve(__dirname, './public'),
+    },
   },
 };

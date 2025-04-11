@@ -11,7 +11,7 @@ export default function CharacterCreationShipName(props) {
             setPlayerInfo(newPlayerInfo) 
           }}></Input>
           <Button onClick={() => {
-            const newMessages = [ ...messages, "Your ship's name is: " + playerInfo.ship.name ];
+            const newMessages = [...messages, { text: "Your ship's name is: " + playerInfo.ship.name, type: 'user' }];
             setMessages(newMessages);
             setGameState('HABITAT_INTRO');
           }}>Submit</Button>

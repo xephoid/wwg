@@ -1,0 +1,115 @@
+.text-window {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00a8ff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+  font-family: 'Courier New', monospace;
+  color: #00a8ff;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-window h2 {
+  color: #00a8ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 168, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.text-window p {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.text-window .text-content {
+  margin-bottom: 1.5rem;
+}
+
+.text-window .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.text-window button {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00a8ff;
+  color: #00a8ff;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.text-window button:hover {
+  background: rgba(0, 168, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+}
+
+.text-window button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.text-window .highlight {
+  color: #00a8ff;
+  font-weight: bold;
+}
+
+.text-window .emphasis {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.text-window .warning {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.text-window .success {
+  color: #00a8ff;
+  font-weight: bold;
+}
+
+.text-window .info {
+  color: #00a8ff;
+  font-style: italic;
+}
+
+.text-window .divider {
+  height: 1px;
+  background: rgba(0, 168, 255, 0.3);
+  margin: 1rem 0;
+}
+
+.text-window .scroll-container {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.text-window .scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text-window .scroll-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.text-window .scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 168, 255, 0.5);
+  border-radius: 4px;
+}
+
+.text-window .scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 168, 255, 0.7);
+} 

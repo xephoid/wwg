@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container, Col, Row, Navbar, NavbarBrand } from 'reactstrap';
 import CharacterSheet from './CharacterSheet';
 import TextWindow from './TextWindow';
-import InputSection from './InputSection';
 import { INTRODUCTION } from '../lib/introduction';
+import '../styles/App.css';
 
 export default function App(props) {
   const [playerInfo, setPlayerInfo] = useState({
@@ -12,22 +12,14 @@ export default function App(props) {
     level: 1,
     xp: 0,
     credits: 200,
-    abilityScores: [
-      // { ability: 'SWA', score: 3 }
-    ],
+    abilityScores: [],
     move: 3,
     range: 1,
-    basicSkills: [
-      // 'You are exceptional at fighting with close range weapons. If you are adjacent to your target. Roll twice and take the higher number. If you are on the same tile as your target, but not adjacent, roll once'
-    ],
-    advancedSkills: [
-      // 'Expert Combat tactics: You automatically succeed at ship takeover.'
-    ],
+    basicSkills: [],
+    advancedSkills: [],
     weapon: null,
     armor: null,
-    consumables: [
-      // { ability: 'SWA', score: 2 }
-    ],
+    consumables: [],
     ship: {
       name: "",
       capacity: 3,
@@ -36,35 +28,33 @@ export default function App(props) {
       damage: 1,
       parts: []
     },
-    crew: [
-      // { name: "", race: "", abilityScores: {}, weapon: null, armor: null, basicSkills: [], advancedSkills: [] }
-    ]
+    crew: []
   });
   const [gameState, setGameState] = useState('CHARACTER_CREATION_STEP_NAME');
-  const [messages, setMessages] = useState([INTRODUCTION]);
+  const [messages, setMessages] = useState([{ text: INTRODUCTION, type: 'assistant' }]);
 
   return (
-  <>
-    <Navbar color="dark" dark expand="md">
-      <NavbarBrand href="/">Warble Way Galaxy</NavbarBrand>
-    </Navbar>
-    <Container>
-      <Row>
-        <CharacterSheet playerInfo={playerInfo} />
-        <TextWindow messages={messages} />
-        <Col md={2}>
-            <Row>{gameState}</Row>
+    <div className="app-container">
+      <Navbar color="dark" dark expand="md" className="main-navbar">
+        <NavbarBrand href="/" className="game-title">Warble Way Galaxy</NavbarBrand>
+      </Navbar>
+      <Container fluid>
+        <Row className="main-content">
+          <Col md={3}>
+            <CharacterSheet className="character-sheet" playerInfo={playerInfo} />
           </Col>
-        <InputSection 
-          playerInfo={playerInfo} 
-          setPlayerInfo={setPlayerInfo} 
-          gameState={gameState} 
-          setGameState={setGameState}
-          messages={messages}
-          setMessages={setMessages}
-          />
-      </Row>
-    </Container>
-  </>
+          <Col md={8} className="text-section">
+            <TextWindow 
+              messages={messages}
+              playerInfo={playerInfo}
+              setPlayerInfo={setPlayerInfo}
+              gameState={gameState}
+              setGameState={setGameState}
+              setMessages={setMessages}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }

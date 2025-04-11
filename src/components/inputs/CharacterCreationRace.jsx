@@ -31,8 +31,7 @@ export default function CharacterCreationRace(props) {
 </ButtonDropdown>
           <Button onClick={() => {
             console.log("clicked!");
-            const newMessages = [ ...messages ];
-            newMessages.push("Your character's race is: " + playerInfo.race);
+            const newMessages = [...messages, { text: "Your character's race is: " + playerInfo.race, type: 'user' }];
             setMessages(newMessages);
             setGameState('CHARACTER_CREATION_STEP_SCORES_3');
           }}>Submit</Button>

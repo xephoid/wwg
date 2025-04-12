@@ -4,6 +4,7 @@ import CharacterSheet from './CharacterSheet';
 import TextWindow from './TextWindow';
 import { INTRODUCTION } from '../lib/introduction';
 import '../styles/App.css';
+import { LOCATIONS } from '../lib/locations';
 
 export default function App(props) {
   const [playerInfo, setPlayerInfo] = useState({
@@ -30,6 +31,8 @@ export default function App(props) {
     },
     crew: []
   });
+
+  const [currentHabitat, setCurrentHabitat] = useState(LOCATIONS[0]);
   const [gameState, setGameState] = useState('CHARACTER_CREATION_STEP_NAME');
   const [messages, setMessages] = useState([{ text: INTRODUCTION, type: 'assistant' }]);
 
@@ -51,6 +54,8 @@ export default function App(props) {
               gameState={gameState}
               setGameState={setGameState}
               setMessages={setMessages}
+              currentHabitat={currentHabitat}
+              setCurrentHabitat={setCurrentHabitat}
             />
           </Col>
         </Row>

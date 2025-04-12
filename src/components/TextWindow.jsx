@@ -3,7 +3,7 @@ import { Col } from 'reactstrap';
 import InputSection from './InputSection';
 
 export default function TextWindow(props) {
-  const { messages, playerInfo, setPlayerInfo, gameState, setGameState, setMessages } = props;
+  const { messages, playerInfo, setPlayerInfo, gameState, setGameState, setMessages, currentHabitat, setCurrentHabitat } = props;
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -35,6 +35,8 @@ export default function TextWindow(props) {
             setGameState={setGameState}
             messages={messages}
             setMessages={setMessages}
+            currentHabitat={currentHabitat}
+            setCurrentHabitat={setCurrentHabitat}
           />
         </div>
         <div ref={messagesEndRef} />

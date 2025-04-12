@@ -18,6 +18,7 @@ export default function InputSection(props) {
         { gameState == 'CHARACTER_CREATION_STEP_SCORES_1' ? <CharacterCreationAbilities scoreAmount={1} {...props} /> : ""}
         { gameState == 'CHARACTER_CREATION_STEP_SHIP_NAME' ? <CharacterCreationShipName {...props} /> : ""}
         { gameState == 'HABITAT_INTRO' ? <HabitatIntro {...props} /> : ""}
+        { gameState == 'HABITAT_RECRUIT' ? <HabitatRecruiting {...props} /> : ""}
       </Row>
     </Col>
   );

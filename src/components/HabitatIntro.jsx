@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Col, Row} from 'reactstrap';
 
 export default function HabitatIntro(props) {
-  const {messages, setMessages, playerInfo, setPlayerInfo, gameState} = props;
+  const {messages, setMessages, playerInfo, setPlayerInfo, gameState, currentHabitat} = props;
 
   const [loading, setLoading] = useState(true);
 
@@ -11,7 +11,7 @@ export default function HabitatIntro(props) {
     fetch('http://localhost:4000', { 
       method: "POST", 
       cache: 'no-cache', 
-      body: JSON.stringify({ ...playerInfo, gameState: 'HABITAT_INTRO', habitatName: 'Xaxalon 4', habitatDescription: 'A small outpost on the outskirts of the galaxy'}), 
+      body: JSON.stringify({ ...playerInfo, gameState: gameState, habitatName: currentHabitat.name, habitatDescription: currentHabitat.description }), 
       mode: 'cors'
     })
       .then(res => {
@@ -42,9 +42,9 @@ export default function HabitatIntro(props) {
   });
 
   return  loading ? <div>Loading...</div> : <>
-  <Button>Look for Recruits</Button>
-  <Button>Check Mission Boards</Button>
-  <Button>Show for items</Button>
-  <Button>Get some R and R for the crew</Button>
+  <Button onClick={() => { setGameState('HABITAT_RECRUIT'); }}>Look for Recruits</Button>
+  <Button onClick={() => { setGameState('HABITAT_MISSIONS'); }}>Check Mission Boards</Button>
+  <Button onClick={() => { setGameState('HABITAT_SHOP');}}>Shop for items</Button>
+  <Button onClick={() => { setGameState('HABITAT_RNR');}}>Get some R and R for the crew</Button>
   </>
 }
